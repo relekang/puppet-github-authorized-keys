@@ -7,7 +7,7 @@ on every run.
 ## Install from git
 
 ```
-git add submodule https://github.com/relekang/puppet-github-authorized-keys.git modules/github_authorized_keys
+git submodule add https://github.com/relekang/puppet-github-authorized-keys.git modules/github_authorized_keys
 ```
 
 ## Usage
