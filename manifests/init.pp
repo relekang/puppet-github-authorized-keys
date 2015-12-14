@@ -32,15 +32,13 @@ define github_authorized_keys (
     $key_files = "$ssh_dir/authorized_keys_github"
   }
 
-
-
   exec { "concat keys for $title":
     command => "/bin/cat $key_files  > $ssh_dir/authorized_keys",
     require => $concat_requires
   }
 
   exec { "remove temp files for $title":
-    command => "/bin/rm $ssh_dir/authorized_keys",
+    command => "/bin/rm $ssh_dir/authorized_keys_*",
     require => Exec["concat keys for $title"]
   }
 
